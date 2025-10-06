@@ -10,6 +10,7 @@
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+
     <style>
         /* Google Font */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
@@ -18,6 +19,10 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -113,7 +118,6 @@
             position: absolute;
             top: 60px;
             left: 0;
-
             width: 100%;
             background-color: #1f1f1f;
             padding: 10px 20px;
@@ -136,30 +140,32 @@
 
         /* Hero Section */
         .hero-section {
-            padding: 100px 20px;
+            padding: 60px 20px;
             text-align: center;
             background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.8)), url('images/hero-bg.jpg') no-repeat center center/cover;
-            min-height: 50vh;
+            min-height: 70vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
 
+        .hero-content {
+            max-width: 90%;
+        }
 
-        /* image-content */
-
-
-
+        /* Responsive 3D Image Cube */
         .image-content {
-
             position: relative;
-            width: 250px;
-            height: 200px;
+            width: 80vw;
+            max-width: 300px;
+            height: 60vw;
+            max-height: 250px;
             background-color: transparent;
             transform-style: preserve-3d;
             transform: rotateX(-15deg) rotateY(0deg);
             transition: 1s transform;
+            margin: 0 auto;
         }
 
         .side {
@@ -203,22 +209,6 @@
         .s6 {
             background-image: url(./images/06.jpg);
             transform: rotateY(300deg) translateZ(250px);
-        }
-
-
-
-
-        .btn-primary {
-            background-color: #007bff;
-            color: #ffffff;
-            padding: 12px 25px;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: background-color 0.3s;
-        }
-
-        .btn-primary:hover {
-            background-color: #0056b3;
         }
 
         /* Footer */
@@ -301,6 +291,18 @@
             }
         }
 
+        @media (max-width: 767px) {
+            .footer-col, .secondary-nav {
+                width: 100%;
+                text-align: center;
+            }
+
+            .main-footer {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
         /* Extra large screens */
         @media (min-width: 1200px) {
             .hero-content h1 {
@@ -316,8 +318,8 @@
             }
         }
     </style>
-</head>
 
+</head>
 <body>
 
     <!-- Header -->
