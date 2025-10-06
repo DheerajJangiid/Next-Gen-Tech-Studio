@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Humari Agency | Home Page</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: #f4f4f4;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #ff5722;
+        }
+
+        /* Header */
+        .main-header {
+            background-color: #1f1f1f;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        #logo_image {
+            max-width: 120px;
+            height: auto;
+            display: block;
+        }
+
+        .primary-nav {
+            display: none;
+            width: 100%;
+        }
+
+        .primary-nav ul {
+            list-style: none;
+        }
+
+        .primary-nav ul li a {
+            color: #ccc;
+            font-weight: 600;
+            display: block;
+            padding: 5px 0;
+            transition: color 0.3s;
+        }
+
+        .primary-nav ul li a:hover {
+            color: #ffffff;
+        }
+
+        .btn-contact {
+            background-color: #ff5722;
+            color: #ffffff;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn-contact:hover {
+            background-color: #e64a19;
+        }
+
+        .menu-toggle {
+            background: none;
+            border: 2px solid #ff5722;
+            color: #ff5722;
+            font-size: 1.5em;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .primary-nav.active {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            left: 0;
+
+            width: 100%;
+            background-color: #1f1f1f;
+            padding: 10px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .primary-nav.active ul {
+            width: 100%;
+            text-align: center;
+        }
+
+        .primary-nav.active ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        .primary-nav.active ul li:last-child {
+            border-bottom: none;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 100px 20px;
+            text-align: center;
+            background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.8)), url('images/hero-bg.jpg') no-repeat center center/cover;
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        /* image-content */
+
+
+
+        .image-content {
+
+            position: relative;
+            width: 250px;
+            height: 200px;
+            background-color: transparent;
+            transform-style: preserve-3d;
+            transform: rotateX(-15deg) rotateY(0deg);
+            transition: 1s transform;
+        }
+
+        .side {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            cursor: pointer;
+        }
+
+        .s1 {
+            background-image: url(./images/01.jpg);
+            transform: rotateY(0deg) translateZ(250px);
+        }
+
+        .s2 {
+            background-image: url(./images/02.jpg);
+            transform: rotateY(60deg) translateZ(250px);
+        }
+
+        .s3 {
+            background-image: url(./images/03.jpg);
+            transform: rotateY(120deg) translateZ(250px);
+        }
+
+        .s4 {
+            background-image: url(./images/04.jpg);
+            transform: rotateY(180deg) translateZ(250px);
+        }
+
+        .s5 {
+            background-image: url(./images/05.jpg);
+            transform: rotateY(240deg) translateZ(250px);
+        }
+
+        .s6 {
+            background-image: url(./images/06.jpg);
+            transform: rotateY(300deg) translateZ(250px);
+        }
+
+
+
+
+        .btn-primary {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer */
+        .main-footer {
+            background-color: #1f1f1f;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            border-top: 1px solid #333;
+        }
+
+        .logo-text {
+            font-size: 1.2em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .secondary-nav h3 {
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .secondary-nav ul {
+            list-style: none;
+        }
+
+        .secondary-nav ul li a {
+            color: #aaa;
+            display: block;
+            padding: 5px 0;
+        }
+
+        /* Tablet/Desktop */
+        @media (min-width: 768px) {
+            .main-header {
+                padding: 15px 40px;
+                flex-wrap: nowrap;
+            }
+
+            .menu-toggle {
+                display: none;
+            }
+
+            .primary-nav {
+                display: block;
+                width: auto;
+            }
+
+            .primary-nav ul {
+                display: flex;
+            }
+
+            .primary-nav ul li {
+                margin-left: 25px;
+            }
+
+            .btn-contact {
+                margin-top: 0;
+                margin-left: 20px;
+            }
+
+            .hero-content h1 {
+                font-size: 3.5em;
+            }
+
+            .main-footer {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+                padding: 40px 60px;
+            }
+
+            .footer-col {
+                width: 45%;
+            }
+
+            .secondary-nav {
+                width: 45%;
+            }
+        }
+
+        /* Extra large screens */
+        @media (min-width: 1200px) {
+            .hero-content h1 {
+                font-size: 4.5em;
+            }
+
+            .hero-content p {
+                font-size: 1.3em;
+            }
+
+            .main-footer {
+                padding: 60px 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="logo">
+            <img id="logo_image" src="images/logo01_white.png" alt="Agency Logo">
+        </div>
+
+        <nav class="primary-nav">
+            <ul>
+                <li><a href="Home.html">Services</a></li>
+                <li><a href="Services.html">Services</a></li>
+                <li><a href="Portfolio.html">Portfolio</a></li>
+                <li><a href="About.html">About Us</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="hero-section">
+        <div class="hero-content">
+            <div class="image-content">
+                <div class="side s1"></div>
+                <div class="side s2"></div>
+                <div class="side s3"></div>
+                <div class="side s4"></div>
+                <div class="side s5"></div>
+                <div class="side s6"></div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-col logo-col">
+            <div class="logo-text">Agency Brand</div>
+            <p>&copy; 2025 Sabhi Adhikar Surakshit.</p>
+        </div>
+
+        <div class="footer-col secondary-nav">
+            <h3>Zaroori Links</h3>
+            <ul>
+                <li><a href="about.html">Humare Bare Mein</a></li>
+                <li><a href="blog.html">Blog/Insights</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- JavaScript for mobile menu -->
+    <script>
+    // Mobile menu toggle
+document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menu-toggle');
+    const primaryNav = document.querySelector('.primary-nav');
+
+    if (menuToggle && primaryNav) {
+        menuToggle.addEventListener('click', function () {
+            primaryNav.classList.toggle('active');
+
+            if (primaryNav.classList.contains('active')) {
+                menuToggle.textContent = '✕';
+                menuToggle.style.color = '#ffffff';
+                menuToggle.style.backgroundColor = '#ff5722';
+            } else {
+                menuToggle.textContent = '☰';
+                menuToggle.style.color = '#ff5722';
+                menuToggle.style.backgroundColor = 'transparent';
+            }
+        });
+    }
+
+    // Image cube rotation
+    let box = document.querySelector('.image-content'); // ✅ Fixed class
+    let sides = document.querySelectorAll('.side');
+
+    sides.forEach((side, i) => {
+        side.addEventListener('click', () => {
+            box.style.transform = `rotateX(-15deg) rotateY(-${i * 60}deg)`;
+        });
+    });
+});
+
+    </script>
+</body>
+
+</html>
